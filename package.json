@@ -1,0 +1,25 @@
+{
+  "name": "technova-computer-academy",
+  "version": "1.0.0",
+  "description": "TechNova Computer Academy website with enquiry management system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "education",
+    "computer-training",
+    "academy",
+    "express"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.19.0",
+    "nodemailer": "^6.9.14"
+  }
+}
