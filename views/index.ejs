@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TechNova Computer Academy offers practical digital skills, coding, office productivity, web development, and IT training for students and professionals." />
+  <meta property="og:title" content="TechNova Computer Academy" />
+  <meta property="og:description" content="Learn Today. Build Tomorrow." />
+  <meta property="og:type" content="website" />
+  <title>TechNova Computer Academy | Learn Today. Build Tomorrow.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script defer src="/js/main.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div>Welcome to TechNova Computer Academy</div>
+      <div class="topbar-links">
+        <a href="tel:+919876543210">📞 <%= site.phone %></a>
+        <a href="mailto:<%= site.email %>">✉️ <%= site.email %></a>
+        <a href="<%= site.mapsUrl %>" target="_blank">📍 <%= site.address %></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container navbar">
+      <div class="logo-wrap">
+        <div class="logo-mark">TN</div>
+        <div class="logo-text">
+          <strong><%= site.name %></strong>
+          <small><%= site.tagline %></small>
+        </div>
+      </div>
+      <nav>
+        <ul class="main-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/courses">Courses</a></li>
+          <li><a href="/admissions">Admissions</a></li>
+          <li><a href="/faculty">Faculty</a></li>
+          <li><a href="/facilities">Facilities</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="tel:+919876543210">Call Us</a>
+        <button class="btn btn-primary" data-open-callback>Get a Callback</button>
+      </div>
+      <button class="btn btn-secondary mobile-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="badge">Premium Tech Education</span>
+          <h1>Build Your Digital Skills. Shape Your Future.</h1>
+          <p>TechNova Computer Academy helps students, graduates, and professionals gain practical digital, coding, and workplace skills that open up new career opportunities.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/courses">Explore Courses</a>
+            <button class="btn btn-secondary" data-open-callback>Enquire Now</button>
+            <a class="btn btn-whatsapp" href="https://wa.me/919876543210?text=Hello%20TechNova%20Computer%20Academy%2C%20I%20want%20to%20know%20more%20about%20your%20courses." target="_blank" rel="noreferrer">WhatsApp Us</a>
+          </div>
+          <ul class="hero-points">
+            <li>Hands-on learning</li>
+            <li>Career-focused training</li>
+            <li>Beginner friendly</li>
+          </ul>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-visual-inner">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Students learning with technology in a classroom" />
+          </div>
+          <div class="floating-card">
+            <span class="badge">Career Ready</span>
+            <strong>100%</strong>
+            <span>Practical learning support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; align-items:end; gap:1rem; flex-wrap: wrap;">
+          <div>
+            <span class="badge">Featured Courses</span>
+            <h2 class="section-title">Popular programs for every learner</h2>
+          </div>
+          <a class="link-primary" href="/courses">View all courses →</a>
+        </div>
+        <div class="grid-3" style="margin-top:2rem;">
+          <% featuredCourses.forEach(course => { %>
+            <article class="course-card">
+              <div class="card-image">
+                <img src="<%= course.image %>" alt="<%= course.name %>" />
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span class="tag"><%= course.category %></span>
+                  <span><%= course.duration %></span>
+                </div>
+                <h3><%= course.name %></h3>
+                <p><%= course.shortDescription %></p>
+                <ul class="card-list">
+                  <% course.highlights.slice(0,3).forEach(item => { %>
+                    <li><%= item %></li>
+                  <% }); %>
+                </ul>
+                <div class="card-actions">
+                  <span><strong><%= site.currency %> Contact</strong></span>
+                  <a class="link-primary" href="/courses/<%= course.slug %>">View Details</a>
+                </div>
+              </div>
+            </article>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:#fff;">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Students studying at TechNova Computer Academy" />
+          </div>
+          <div>
+            <span class="badge">About TechNova</span>
+            <h2 class="section-title">Your pathway to digital confidence and career growth</h2>
+            <p class="section-subtitle">At TechNova Computer Academy, we believe practical learning changes lives. Our teaching combines hands-on practice, real-world exercises, and supportive mentorship.</p>
+            <ul class="check-list">
+              <li>Experienced, approachable trainers</li>
+              <li>Practical projects and lab-based learning</li>
+              <li>Support for beginners, students, and professionals</li>
+              <li>Flexible guidance for course selection and career goals</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="/about">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading" style="text-align:center; margin-bottom:2rem;">
+          <span class="badge">Why Choose Us</span>
+          <h2 class="section-title">Professional learning designed around real outcomes</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">💡</div>
+            <h3>Practical Learning</h3>
+            <p>Hands-on sessions with useful exercises and real-world applications.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Career Focus</h3>
+            <p>Courses designed to support skill-building and workplace confidence.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🧑‍🏫</div>
+            <h3>Expert Trainers</h3>
+            <p>Guidance from experienced educators who teach with clarity and patience.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">📘</div>
+            <h3>Beginner Friendly</h3>
+            <p>Supportive learning environment for students and first-time learners.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:#fff;">
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; align-items:end; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <span class="badge">Facilities</span>
+            <h2 class="section-title">Modern classrooms and digital learning spaces</h2>
+          </div>
+          <a class="link-primary" href="/facilities">View gallery →</a>
+        </div>
+        <div class="gallery-grid" style="margin-top:2rem;">
+          <% gallery.slice(0,6).forEach(item => { %>
+            <div class="gallery-item" data-lightbox-src="<%= item.image %>" data-lightbox-title="<%= item.title %>">
+              <img src="<%= item.image %>" alt="<%= item.title %>" />
+              <span><%= item.title %></span>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading" style="text-align:center; margin-bottom:2rem;">
+          <span class="badge">Student Voices</span>
+          <h2 class="section-title">Real learning experiences</h2>
+        </div>
+        <div class="grid-3">
+          <% testimonials.forEach(t => { %>
+            <div class="testimonial-card">
+              <div style="display:flex; align-items:center; gap:0.5rem; color:#f59e0b; margin-bottom:1rem;">★★★★★</div>
+              <p>“<%= t.quote %>”</p>
+              <strong><%= t.name %></strong>
+              <div style="color:var(--text-muted);"><%= t.course %></div>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:#fff;">
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; align-items:end; gap:1rem; flex-wrap: wrap;">
+          <div>
+            <span class="badge">Latest Updates</span>
+            <h2 class="section-title">Announcements and insights</h2>
+          </div>
+          <a class="link-primary" href="/blog">Visit blog →</a>
+        </div>
+        <div class="grid-3" style="margin-top:2rem;">
+          <% posts.forEach(post => { %>
+            <article class="post-card">
+              <div class="card-image">
+                <img src="<%= post.image %>" alt="<%= post.title %>" />
+              </div>
+              <div class="card-body">
+                <div class="date"><%= new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) %> · <%= post.category %></div>
+                <h3><%= post.title %></h3>
+                <p><%= post.excerpt %></p>
+                <a class="link-primary" href="/blog/<%= post.slug %>">Read more</a>
+              </div>
+            </article>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="form-shell">
+          <div style="display:flex; justify-content:space-between; align-items:end; gap:1rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+            <div>
+              <span class="badge">Admission Enquiry</span>
+              <h2 class="section-title">Speak with our team</h2>
+            </div>
+            <a class="link-primary" href="/admissions">View admissions info →</a>
+          </div>
+          <form data-form-type="general" id="homeInquiryForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Student Name</label>
+                <input id="name" name="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" placeholder="Your mobile number" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="Your email address" />
+              </div>
+              <div class="form-group">
+                <label for="course">Interested Course</label>
+                <select id="course" name="course">
+                  <option value="">Select a course</option>
+                  <% site.courses || [] %>
+                  <% ["Basic Computer","MS Office","Advanced Excel","Tally, Accounting and GST","C Programming","C++","Java","Python","Web Development","Graphic Design and DTP","Computer Hardware and Networking"].forEach(courseName => { %>
+                    <option value="<%= courseName %>"><%= courseName %></option>
+                  <% }); %>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us which course or support you need." required></textarea>
+              </div>
+            </div>
+            <div class="hero-actions" style="margin-top:1.5rem;">
+              <button class="btn btn-primary" type="submit">Submit Enquiry</button>
+            </div>
+            <div class="form-message" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo-wrap" style="margin-bottom:1rem;">
+          <div class="logo-mark">TN</div>
+          <div class="logo-text">
+            <strong style="color:white;"><%= site.name %></strong>
+            <small style="color:rgba(255,255,255,0.72);"><%= site.tagline %></small>
+          </div>
+        </div>
+        <p>We help learners build digital confidence through practical, modern, and career-oriented training.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/courses">Courses</a></li>
+          <li><a href="/admissions">Admissions</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;">
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;">
+          <li><a href="tel:+919876543210"><%= site.phone %></a></li>
+          <li><a href="mailto:<%= site.email %>"><%= site.email %></a></li>
+          <li><a href="<%= site.mapsUrl %>" target="_blank"> <%= site.address %></a></li>
+          <li><%= site.hours %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 <%= site.name %>. All rights reserved.</span>
+      <span>Built with a premium education-first approach.</span>
+    </div>
+  </footer>
+
+  <div class="modal" id="callbackModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="closeCallbackModal" aria-label="Close callback form">×</button>
+      <div class="badge" style="margin-bottom:1rem;">Get a Callback</div>
+      <h2 style="margin-top:0;">Request a callback</h2>
+      <p style="color:var(--text-muted);">Share your details and our team will contact you with course guidance.</p>
+      <form data-form-type="callback" id="callbackForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="callbackName">Full Name</label>
+            <input id="callbackName" name="name" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="callbackPhone">Mobile Number</label>
+            <input id="callbackPhone" name="phone" placeholder="Your mobile number" required />
+          </div>
+          <div class="form-group">
+            <label for="callbackEmail">Email Address</label>
+            <input id="callbackEmail" name="email" type="email" placeholder="Your email" />
+          </div>
+          <div class="form-group">
+            <label for="callbackCourse">Course Interested In</label>
+            <select id="callbackCourse" name="course" data-default="">
+              <option value="">Select a course</option>
+              <% ["Basic Computer","MS Office","Advanced Excel","Tally, Accounting and GST","C Programming","C++","Java","Python","Web Development","Graphic Design and DTP","Computer Hardware and Networking"].forEach(courseName => { %>
+                <option value="<%= courseName %>"><%= courseName %></option>
+              <% }); %>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="callbackTime">Preferred Time</label>
+            <select id="callbackTime" name="preferredTime">
+              <option value="Morning">Morning</option>
+              <option value="Afternoon">Afternoon</option>
+              <option value="Evening">Evening</option>
+              <option value="Flexible">Flexible</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="callbackMessage">Message</label>
+            <textarea id="callbackMessage" name="message" rows="4" placeholder="Tell us what you need help with."></textarea>
+          </div>
+          <div class="form-group full">
+            <label class="checkbox-row">
+              <input type="checkbox" name="privacyConsent" value="true" required />
+              <span>I agree to be contacted regarding my enquiry.</span>
+            </label>
+          </div>
+        </div>
+        <div class="hero-actions" style="margin-top:1.5rem;">
+          <button class="btn btn-primary" type="submit">Request a Callback</button>
+        </div>
+        <div class="form-message" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+    <div class="gallery-lightbox-content">
+      <div class="lightbox-controls">
+        <button class="lightbox-btn" id="prevLightbox" aria-label="Previous image">←</button>
+        <button class="lightbox-btn" id="closeLightbox" aria-label="Close lightbox">×</button>
+        <button class="lightbox-btn" id="nextLightbox" aria-label="Next image">→</button>
+      </div>
+      <img id="lightboxImage" src="" alt="Gallery item" />
+      <div style="background:rgba(15,23,42,0.65); color:white; padding:1rem; border-radius:0 0 14px 14px; text-align:center;" id="lightboxTitle">Gallery image</div>
+    </div>
+  </div>
+
+  <div class="float-buttons">
+    <a class="floating-action btn-whatsapp" href="https://wa.me/919876543210?text=Hello%20TechNova%20Computer%20Academy%2C%20I%20want%20to%20know%20more%20about%20your%20courses." target="_blank" rel="noreferrer" aria-label="WhatsApp us">💬</a>
+    <a class="floating-action btn-primary" href="tel:+919876543210" aria-label="Call us">📞</a>
+  </div>
+</body>
+</html>

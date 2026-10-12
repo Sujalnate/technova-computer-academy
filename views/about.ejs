@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TechNova Computer Academy offers modern computer learning, IT training, coding, office productivity, and digital skills for students and professionals." />
+  <title>About Us | TechNova Computer Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script defer src="/js/main.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div>Welcome to TechNova Computer Academy</div>
+      <div class="topbar-links">
+        <a href="tel:<%= site.phone.replace(/\D/g, '') %>">📞 <%= site.phone %></a>
+        <a href="mailto:<%= site.email %>">✉️ <%= site.email %></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container navbar">
+      <div class="logo-wrap">
+        <div class="logo-mark">TN</div>
+        <div class="logo-text">
+          <strong><%= site.name %></strong>
+          <small><%= site.tagline %></small>
+        </div>
+      </div>
+      <nav>
+        <ul class="main-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/courses">Courses</a></li>
+          <li><a href="/admissions">Admissions</a></li>
+          <li><a href="/faculty">Faculty</a></li>
+          <li><a href="/facilities">Facilities</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="tel:+919876543210">Call Us</a>
+        <button class="btn btn-primary" data-open-callback>Get a Callback</button>
+      </div>
+      <button class="btn btn-secondary mobile-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <span class="badge" style="background:rgba(255,255,255,0.12); color:white; border-color:rgba(255,255,255,0.2);">About Us</span>
+      <h1>Empowering learners through digital skills and practical training</h1>
+      <div class="breadcrumbs">
+        <a href="/">Home</a> / <span>About Us</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="section">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="TechNova academy students in a classroom" />
+      </div>
+      <div>
+        <span class="badge">Our Story</span>
+        <h2 class="section-title">A modern learning environment built for confidence and growth</h2>
+        <p class="section-subtitle">TechNova Computer Academy is designed for beginners, students, graduates, and professionals who want practical digital competence and a strong foundation in computer education.</p>
+        <ul class="check-list">
+          <li>Job-oriented and skill-based learning tracks</li>
+          <li>Friendly instructors with practical teaching methods</li>
+          <li>Supportive and affordable learning environment</li>
+          <li>Hands-on learning through guided tasks and exercises</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <section class="section" style="background:#fff;">
+    <div class="container">
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Mission</h3>
+          <p>Help learners gain the practical digital skills needed to succeed in education and professional life.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Vision</h3>
+          <p>To become a trusted destination for digital empowerment, career preparation, and lifelong learning.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>Teaching Philosophy</h3>
+          <p>Focus on conceptual clarity, guided practice, and meaningful outcomes instead of passive content delivery.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">💼</div>
+          <h3>Learning Approach</h3>
+          <p>Use a learner-friendly, practical structure that supports confidence and real-world relevance.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="container section">
+    <div class="callout-box">
+      <h2 style="margin-top:0;">Ready to begin?</h2>
+      <p>Talk to our team to understand which course fits your learning goals and available schedule.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-open-callback>Get a Callback</button>
+        <a class="btn btn-secondary" href="/courses">Explore Courses</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>TechNova</h3>
+        <p>Learn Today. Build Tomorrow.</p>
+      </div>
+      <div>
+        <h3>Links</h3>
+        <ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;">
+          <li><a href="/courses">Courses</a></li>
+          <li><a href="/admissions">Admissions</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;">
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/privacy-policy">Privacy</a></li>
+          <li><a href="/terms">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;">
+          <li><a href="tel:+919876543210"><%= site.phone %></a></li>
+          <li><a href="mailto:<%= site.email %>"><%= site.email %></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
