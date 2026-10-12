@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | TechNova Computer Academy</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="header"><div class="container navbar"><div class="logo-wrap"><div class="logo-mark">TN</div><div class="logo-text"><strong><%= site.name %></strong><small><%= site.tagline %></small></div></div><nav><ul class="main-nav"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/courses">Courses</a></li><li><a href="/admissions">Admissions</a></li><li><a href="/faculty">Faculty</a></li><li><a href="/facilities">Facilities</a></li><li><a href="/blog">Blog</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li></ul></nav></div></header>
+  <div class="page-header"><div class="container"><span class="badge">Privacy Policy</span><h1>Privacy and data handling</h1><div class="breadcrumbs"><a href="/">Home</a> / <span>Privacy Policy</span></div></div></div>
+  <main class="section">
+    <div class="container callout-box">
+      <p>We collect enquiry information such as the student's name, phone number, email address, course interest, and message only to respond to course-related queries and provide support.</p>
+      <p>Data is used only for admissions support, contact follow-up, and service improvement. We do not sell or share personal data with third parties except where required for service delivery or legal compliance.</p>
+      <p>We recommend that users review this policy with a legal advisor before public commercial launch, especially if contact data is stored in a production environment.</p>
+      <p>For updates, contact <a href="mailto:<%= site.email %>"><%= site.email %></a>.</p>
+    </div>
+  </main>
+  <footer class="footer"><div class="container footer-grid"><div><h3>TechNova</h3><p>Learn Today. Build Tomorrow.</p></div><div><h3>Links</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="/about">About</a></li><li><a href="/courses">Courses</a></li><li><a href="/contact">Contact</a></li></ul></div><div><h3>Support</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="/faq">FAQ</a></li><li><a href="/terms">Terms</a></li></ul></div><div><h3>Contact</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="tel:+919876543210"><%= site.phone %></a></li><li><a href="mailto:<%= site.email %>"><%= site.email %></a></li></ul></div></div></footer>
+</body>
+</html>

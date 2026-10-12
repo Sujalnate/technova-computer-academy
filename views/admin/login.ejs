@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | TechNova Computer Academy</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="page-header">
+    <div class="container">
+      <span class="badge" style="background:rgba(255,255,255,0.12); color:white; border-color:rgba(255,255,255,0.2);">Admin</span>
+      <h1>Owner Login</h1>
+    </div>
+  </div>
+  <main class="section">
+    <div class="container" style="max-width:520px;">
+      <div class="form-shell">
+        <form method="POST" action="/admin/login">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" required />
+          </div>
+          <% if (typeof error !== 'undefined') { %>
+            <div class="form-message error" style="display:block;"><%= error %></div>
+          <% } %>
+          <div class="hero-actions">
+            <button class="btn btn-primary" type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

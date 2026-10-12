@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | TechNova Computer Academy</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="page-header">
+    <div class="container">
+      <span class="badge" style="background:rgba(255,255,255,0.12); color:white; border-color:rgba(255,255,255,0.2);">Owner Dashboard</span>
+      <h1>Inquiry Management</h1>
+      <div class="breadcrumbs"><a href="/">Home</a> / <span>Dashboard</span></div>
+    </div>
+  </div>
+  <main class="section">
+    <div class="container">
+      <div class="dashboard-shell">
+        <aside class="sidebar">
+          <h3>Navigation</h3>
+          <a href="/admin/dashboard">Dashboard</a>
+          <a href="/admin/export">Export CSV</a>
+          <a href="/admin/logout">Logout</a>
+        </aside>
+        <section>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>ID</th><th>Name</th><th>Course</th><th>Phone</th><th>Status</th><th>Created</th></tr>
+              </thead>
+              <tbody>
+                <% enquiries.forEach(item => { %>
+                  <tr>
+                    <td><%= item.id %></td>
+                    <td><%= item.name %></td>
+                    <td><%= item.course || 'General inquiry' %></td>
+                    <td><%= item.phone %></td>
+                    <td>
+                      <span class="status-pill <%= item.status === 'New' ? 'status-new' : item.status === 'Contacted' ? 'status-contacted' : item.status === 'In Progress' ? 'status-progress' : 'status-closed' %>"><%= item.status %></span>
+                    </td>
+                    <td><%= new Date(item.createdAt).toLocaleString('en-IN') %></td>
+                  </tr>
+                <% }); %>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

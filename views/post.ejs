@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= post.title %> | TechNova Computer Academy</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script defer src="/js/main.js"></script>
+</head>
+<body>
+  <header class="header"><div class="container navbar"><div class="logo-wrap"><div class="logo-mark">TN</div><div class="logo-text"><strong><%= site.name %></strong><small><%= site.tagline %></small></div></div><nav><ul class="main-nav"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/courses">Courses</a></li><li><a href="/admissions">Admissions</a></li><li><a href="/faculty">Faculty</a></li><li><a href="/facilities">Facilities</a></li><li><a href="/blog">Blog</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li></ul></nav><div class="nav-actions"><a class="btn btn-secondary" href="tel:+919876543210">Call Us</a> <button class="btn btn-primary" data-open-callback>Get a Callback</button></div></div></header>
+  <div class="page-header"><div class="container"><span class="badge"><%= post.category %></span><h1><%= post.title %></h1><div class="breadcrumbs"><a href="/">Home</a> / <a href="/blog">Blog</a> / <span><%= post.title %></span></div></div></div>
+  <main class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image"><img src="<%= post.image %>" alt="<%= post.title %>" /></div>
+        <div>
+          <div class="date" style="color:var(--text-muted); margin-bottom:1rem;"><%= new Date(post.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) %></div>
+          <div class="callout-box"><%- post.content %></div>
+        </div>
+      </div>
+      <% if (related && related.length) { %>
+      <div class="section" style="padding-top:2rem;">
+        <h2 class="section-title">Related Articles</h2>
+        <div class="course-grid">
+          <% related.forEach(item => { %>
+            <article class="post-card">
+              <div class="card-image"><img src="<%= item.image %>" alt="<%= item.title %>" /></div>
+              <div class="card-body"><div class="date"><%= new Date(item.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) %> · <%= item.category %></div><h3><%= item.title %></h3><a class="link-primary" href="/blog/<%= item.slug %>">Read more</a></div>
+            </article>
+          <% }); %>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </main>
+  <footer class="footer"><div class="container footer-grid"><div><h3>TechNova</h3><p>Learn Today. Build Tomorrow.</p></div><div><h3>Links</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="/about">About</a></li><li><a href="/courses">Courses</a></li><li><a href="/contact">Contact</a></li></ul></div><div><h3>Support</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="/faq">FAQ</a></li><li><a href="/terms">Terms</a></li><li><a href="/privacy-policy">Privacy</a></li></ul></div><div><h3>Contact</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="tel:+919876543210"><%= site.phone %></a></li><li><a href="mailto:<%= site.email %>"><%= site.email %></a></li></ul></div></div></footer>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Course details for TechNova Computer Academy." />
+  <title><%= course.name %> | TechNova Computer Academy</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script defer src="/js/main.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div>Welcome to TechNova Computer Academy</div>
+      <div class="topbar-links">
+        <a href="tel:+919876543210">📞 <%= site.phone %></a>
+        <a href="mailto:<%= site.email %>">✉️ <%= site.email %></a>
+      </div>
+    </div>
+  </div>
+  <header class="header">
+    <div class="container navbar">
+      <div class="logo-wrap">
+        <div class="logo-mark">TN</div>
+        <div class="logo-text"><strong><%= site.name %></strong><small><%= site.tagline %></small></div>
+      </div>
+      <nav>
+        <ul class="main-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/courses">Courses</a></li>
+          <li><a href="/admissions">Admissions</a></li>
+          <li><a href="/faculty">Faculty</a></li>
+          <li><a href="/facilities">Facilities</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions"><a class="btn btn-secondary" href="tel:+919876543210">Call Us</a> <button class="btn btn-primary" data-open-callback>Get a Callback</button></div>
+    </div>
+  </header>
+  <div class="page-header">
+    <div class="container">
+      <span class="badge" style="background:rgba(255,255,255,0.12); color:white; border-color:rgba(255,255,255,0.2);">Course Details</span>
+      <h1><%= course.name %></h1>
+      <div class="breadcrumbs"><a href="/">Home</a> / <a href="/courses">Courses</a> / <span><%= course.name %></span></div>
+    </div>
+  </div>
+  <main class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="<%= course.image %>" alt="<%= course.name %>" />
+        </div>
+        <div>
+          <span class="badge"><%= course.category %></span>
+          <h2 class="section-title"><%= course.name %></h2>
+          <p class="section-subtitle"><%= course.description %></p>
+          <ul class="check-list">
+            <li><strong>Audience:</strong> <%= course.audience %></li>
+            <li><strong>Eligibility:</strong> <%= course.eligibility %></li>
+            <li><strong>Duration:</strong> <%= course.duration %></li>
+            <li><strong>Fees:</strong> <%= course.fees %></li>
+            <li><strong>Certificate:</strong> <%= course.certificate %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section" style="padding-top:2rem;">
+        <div class="callout-box">
+          <h3 style="margin-top:0;">Course Overview</h3>
+          <p><%= course.description %></p>
+        </div>
+      </div>
+
+      <div class="feature-grid" style="margin-top:2rem;">
+        <article class="feature-card">
+          <div class="feature-icon">📘</div>
+          <h3>Learning Outcomes</h3>
+          <ul class="card-list">
+            <% course.outcomes.forEach(item => { %><li><%= item %></li><% }); %>
+          </ul>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">🧩</div>
+          <h3>Syllabus Modules</h3>
+          <ul class="card-list">
+            <% course.modules.forEach(item => { %><li><%= item %></li><% }); %>
+          </ul>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">🛠️</div>
+          <h3>Practical Activities</h3>
+          <ul class="card-list">
+            <% course.highlights.forEach(item => { %><li><%= item %></li><% }); %>
+          </ul>
+        </article>
+      </div>
+
+      <div class="section" style="padding-top:2rem;">
+        <div class="form-shell">
+          <div style="display:flex; justify-content:space-between; align-items:end; flex-wrap:wrap; gap:1rem; margin-bottom:1.2rem;">
+            <div>
+              <span class="badge">Enquire for This Course</span>
+              <h2 class="section-title">Request details for <%= course.name %></h2>
+            </div>
+          </div>
+          <form data-form-type="general">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Student Name</label>
+                <input id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" />
+              </div>
+              <div class="form-group">
+                <label for="course">Interested Course</label>
+                <select id="course" name="course" data-default="<%= course.name %>">
+                  <option value="<%= course.name %>" selected><%= course.name %></option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+              </div>
+            </div>
+            <div class="hero-actions">
+              <button class="btn btn-primary" type="submit">Submit Enquiry</button>
+            </div>
+            <div class="form-message" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+
+      <% if (related && related.length) { %>
+        <div class="section" style="padding-top:1rem;">
+          <h2 class="section-title">Related Courses</h2>
+          <div class="course-grid">
+            <% related.forEach(item => { %>
+              <article class="course-card">
+                <div class="card-image"><img src="<%= item.image %>" alt="<%= item.name %>" /></div>
+                <div class="card-body">
+                  <div class="card-meta"><span class="tag"><%= item.category %></span><span><%= item.duration %></span></div>
+                  <h3><%= item.name %></h3>
+                  <p><%= item.shortDescription %></p>
+                  <div class="card-actions"><span><strong><%= site.currency %> Contact</strong></span><a class="link-primary" href="/courses/<%= item.slug %>">View Details</a></div>
+                </div>
+              </article>
+            <% }); %>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><h3>TechNova</h3><p>Learn Today. Build Tomorrow.</p></div>
+      <div><h3>Links</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="/about">About</a></li><li><a href="/courses">Courses</a></li><li><a href="/contact">Contact</a></li></ul></div>
+      <div><h3>Support</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="/faq">FAQ</a></li><li><a href="/terms">Terms</a></li><li><a href="/privacy-policy">Privacy</a></li></ul></div>
+      <div><h3>Contact</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="tel:+919876543210"><%= site.phone %></a></li><li><a href="mailto:<%= site.email %>"><%= site.email %></a></li></ul></div>
+    </div>
+  </footer>
+</body>
+</html>

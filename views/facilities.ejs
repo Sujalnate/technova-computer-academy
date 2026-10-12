@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facilities & Gallery | TechNova Computer Academy</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script defer src="/js/main.js"></script>
+</head>
+<body>
+  <header class="header"><div class="container navbar"><div class="logo-wrap"><div class="logo-mark">TN</div><div class="logo-text"><strong><%= site.name %></strong><small><%= site.tagline %></small></div></div><nav><ul class="main-nav"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/courses">Courses</a></li><li><a href="/admissions">Admissions</a></li><li><a href="/faculty">Faculty</a></li><li><a href="/facilities">Facilities</a></li><li><a href="/blog">Blog</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li></ul></nav><div class="nav-actions"><a class="btn btn-secondary" href="tel:+919876543210">Call Us</a> <button class="btn btn-primary" data-open-callback>Get a Callback</button></div></div></header>
+  <div class="page-header"><div class="container"><span class="badge">Facilities & Gallery</span><h1>Modern learning spaces and hands-on sessions</h1><div class="breadcrumbs"><a href="/">Home</a> / <span>Facilities</span></div></div></div>
+  <main class="section">
+    <div class="container">
+      <div class="gallery-grid">
+        <% gallery.forEach(item => { %>
+          <div class="gallery-item" data-lightbox-src="<%= item.image %>" data-lightbox-title="<%= item.title %>">
+            <img src="<%= item.image %>" alt="<%= item.title %>" />
+            <span><%= item.title %></span>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </main>
+  <div class="gallery-lightbox" id="galleryLightbox"><div class="gallery-lightbox-content"><div class="lightbox-controls"><button class="lightbox-btn" id="prevLightbox">←</button><button class="lightbox-btn" id="closeLightbox">×</button><button class="lightbox-btn" id="nextLightbox">→</button></div><img id="lightboxImage" src="" alt="Gallery item" /><div style="background:rgba(15,23,42,0.65); color:white; padding:1rem; border-radius:0 0 14px 14px; text-align:center;" id="lightboxTitle">Gallery</div></div></div>
+  <footer class="footer"><div class="container footer-grid"><div><h3>TechNova</h3><p>Learn Today. Build Tomorrow.</p></div><div><h3>Links</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="/about">About</a></li><li><a href="/courses">Courses</a></li><li><a href="/contact">Contact</a></li></ul></div><div><h3>Support</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="/faq">FAQ</a></li><li><a href="/terms">Terms</a></li><li><a href="/privacy-policy">Privacy</a></li></ul></div><div><h3>Contact</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="tel:+919876543210"><%= site.phone %></a></li><li><a href="mailto:<%= site.email %>"><%= site.email %></a></li></ul></div></div></footer>
+</body>
+</html>

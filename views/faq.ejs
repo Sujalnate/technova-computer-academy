@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | TechNova Computer Academy</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script defer src="/js/main.js"></script>
+</head>
+<body>
+  <header class="header"><div class="container navbar"><div class="logo-wrap"><div class="logo-mark">TN</div><div class="logo-text"><strong><%= site.name %></strong><small><%= site.tagline %></small></div></div><nav><ul class="main-nav"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/courses">Courses</a></li><li><a href="/admissions">Admissions</a></li><li><a href="/faculty">Faculty</a></li><li><a href="/facilities">Facilities</a></li><li><a href="/blog">Blog</a></li><li><a href="/faq">FAQ</a></li><li><a href="/contact">Contact</a></li></ul></nav><div class="nav-actions"><a class="btn btn-secondary" href="tel:+919876543210">Call Us</a> <button class="btn btn-primary" data-open-callback>Get a Callback</button></div></div></header>
+  <div class="page-header"><div class="container"><span class="badge">FAQ</span><h1>Frequently asked questions</h1><div class="breadcrumbs"><a href="/">Home</a> / <span>FAQ</span></div></div></div>
+  <main class="section">
+    <div class="container">
+      <div class="faq-list">
+        <% faqs.forEach((faq, index) => { %>
+          <div class="faq-item <%= index === 0 ? 'active' : '' %>">
+            <button class="faq-question" type="button"><span><%= faq.question %></span><span>+</span></button>
+            <div class="faq-answer"><p><%= faq.answer %></p></div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"><div class="container footer-grid"><div><h3>TechNova</h3><p>Learn Today. Build Tomorrow.</p></div><div><h3>Links</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="/about">About</a></li><li><a href="/courses">Courses</a></li><li><a href="/contact">Contact</a></li></ul></div><div><h3>Support</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="/faq">FAQ</a></li><li><a href="/terms">Terms</a></li><li><a href="/privacy-policy">Privacy</a></li></ul></div><div><h3>Contact</h3><ul style="list-style:none; padding:0; margin:0; display:grid; gap:0.7rem;"><li><a href="tel:+919876543210"><%= site.phone %></a></li><li><a href="mailto:<%= site.email %>"><%= site.email %></a></li></ul></div></div></footer>
+</body>
+</html>
